@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Meeting Booking App</h1>
+    <div>
+    <!-- Slots for booking meetings -->
+    <div class="slots">
+        <div class="slot" id="slot1">
+            <h2>2:00 PM</h2>
+            <p>Available Slots: <span id="slot1-available">4</span></p>
+            <button onclick="toggleBookingForm('slot1')">Book Slot</button>
+            <div id="slot1-form" style="display: none;">
+                <h3>Book a meeting</h3>
+                <form class="meeting-form" onsubmit="bookMeeting('slot1'); return false;">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name-slot1" name="name" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email-slot1" name="email" required><br><br>
+                    <input type="hidden" name="time" id="time-slot1" value="2.00">
+                    <button type="submit">Book Meeting</button>
+                </form>
+            </div>
+        </div>
+        <div class="slot" id="slot2">
+            <h2>2:30 PM</h2>
+            <p>Available Slots: <span id="slot2-available">4</span></p>
+            <button onclick="toggleBookingForm('slot2')">Book Slot</button>
+            <div id="slot2-form" style="display: none;">
+                <h3>Book a meeting</h3>
+                <form class="meeting-form" onsubmit="bookMeeting('slot2'); return false;">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name-slot2" name="name" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email-slot2" name="email" required><br><br>
+                    <input type="hidden" name="time" id="time-slot2" value="2.30">
+                    <button type="submit">Book Meeting</button>
+                </form>
+            </div>
+        </div>
+        <div class="slot" id="slot3">
+            <h2>3:00 PM</h2>
+            <p>Available Slots: <span id="slot3-available">4</span></p>
+            <button onclick="toggleBookingForm('slot3')">Book Slot</button>
+            <div id="slot3-form" style="display: none;">
+                <h3>Book a meeting</h3>
+                <form class="meeting-form" onsubmit="bookMeeting('slot3'); return false;">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name-slot3" name="name" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email-slot3" name="email" required><br><br>
+                    <input type="hidden" name="time" id="time-slot3" value="3.00">
+                    <button type="submit">Book Meeting</button>
+                </form>
+            </div>
+        </div>
+        <div class="slot" id="slot4">
+            <h2>3:30 PM</h2>
+            <p>Available Slots: <span id="slot4-available">4</span></p>
+            <button onclick="toggleBookingForm('slot4')">Book Slot</button>
+            <div id="slot4-form" style="display: none;">
+                <h3>Book a meeting</h3>
+                <form class="meeting-form" onsubmit="bookMeeting('slot4'); return false;">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name-slot4" name="name" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email-slot4" name="email" required><br><br>
+                    <input type="hidden" name="time" id="time-slot4" value="3.30">
+                    <button type="submit">Book Meeting</button>
+                </form>
+            </div>
+        </div>
+    </div>
+     <div id="meetings-container">
+
+     </div>
+
+    
+</div>
+    <!-- Booking form (initially hidden) -->
+    <!-- <div id="booking-form" style="display: none;"> -->
+        <!-- <h3>Book a meeting</h3>
+        <form id="meeting-form" onsubmit="bookMeeting(); return false;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <button type="submit">Book Meeting</button>
+        </form>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
