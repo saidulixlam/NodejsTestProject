@@ -1,4 +1,9 @@
 
+let availableSlots2PM = 4;
+let availableSlots230PM = 4;
+let availableSlots3PM = 4;
+let availableSlots330PM = 4;
+
 function toggleBookingForm(slotId) {
   var formId = slotId + "-form";
   var form = document.getElementById(formId);
@@ -79,16 +84,17 @@ function displayMeetings(meetings) {
   try {
       // Loop through the fetched meetings and create HTML elements to display them
       meetings.forEach(meeting => {
-          var meetingElement = document.createElement('div');
-          meetingElement.classList.add('meeting');
-          meetingElement.innerHTML = `
-              <h3>Hi ${meeting.name}</h3>
-              <p>Please join the meeting via this ${meeting.link} at ${meeting.time} P.M.</p>
-              <button type="button" onClick="deleteMeeting('${meeting.id}')">Cancel</button>
-              <hr>
-          `;
-          meetingsContainer.appendChild(meetingElement);
-      });
+        var meetingElement = document.createElement('div');
+        meetingElement.classList.add('meeting-card');
+        meetingElement.innerHTML = `
+            <h3>Hi ${meeting.name}</h3>
+            <p>Please join the meeting via this <a href="${meeting.link}">${meeting.link}</a> at ${meeting.time} P.M.</p>
+            <button type="button" onClick="deleteMeeting('${meeting.id}')">Cancel</button>
+        `;
+        meetingsContainer.appendChild(meetingElement);
+    });
+    
+    
   } catch (error) {
       // Handle error in displaying meetings
       console.error('Error displaying meetings:', error);
@@ -109,11 +115,6 @@ function deleteMeeting(meetingId) {
       // You can display an error message to the user or perform other actions
   });
 }
-
-let availableSlots2PM = 4;
-let availableSlots230PM = 4;
-let availableSlots3PM = 4;
-let availableSlots330PM = 4;
 
 function updateAvailableSlots(meetings) {
     // Loop through the fetched meetings and update available slots for each time slot

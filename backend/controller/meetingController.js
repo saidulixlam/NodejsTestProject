@@ -2,7 +2,7 @@ const Meeting = require('../models/meetings');
 exports.createMeeting = async (req, res) => {
     try {
       const { name, email, slotId,time } = req.body;
-      const link = "random link";
+      const link = "https://meet.google.com/jum-affj-jda";
       const meeting = await Meeting.create({ name,email,link,slotId,time });
       res.status(201).json(meeting);
     } catch (error) {
